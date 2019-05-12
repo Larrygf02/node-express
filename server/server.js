@@ -15,6 +15,9 @@ app.use(express.static(publicPath));
 // IO = esta es la comunicacion del backend
 let io = socketIO(server)
 
+io.on('connection', (client) => {
+    console.log('Usuario conectado');
+})
 
 server.listen(port, (err) => {
 
