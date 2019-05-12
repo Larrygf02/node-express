@@ -21,6 +21,11 @@ io.on('connection', (client) => {
     client.on('disconnect', () => {
         console.log('Usuario desconectado');
     })
+
+    // Escuchar el cliente
+    client.on('enviarMensaje', (mensaje) => {
+        console.log(mensaje);
+    })
 })
 server.listen(port, (err) => {
 

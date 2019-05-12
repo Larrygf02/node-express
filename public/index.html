@@ -18,11 +18,18 @@
             console.log('Conectado al servidor');
         })
 
+        // escuchar
         socket.on('disconnect', function() {
             console.log('Perdimos conexion con el servidor');
         })
 
-        
+        //enviar informacion
+        socket.emit('enviarMensaje', {
+            usuario: 'Fernando',
+            mensaje: 'Hola mundo'
+        });
+
+
     </script>
 </body>
 
