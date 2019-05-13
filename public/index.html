@@ -29,6 +29,10 @@
             mensaje: 'Hola mundo'
         });
 
+        //escuchar informacion
+        socket.on('enviarMensaje', function(mensaje) {
+            console.log('Servidor:', mensaje);
+        })
 
     </script>
 </body>
