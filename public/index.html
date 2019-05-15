@@ -27,6 +27,8 @@
         socket.emit('enviarMensaje', {
             usuario: 'Fernando',
             mensaje: 'Hola mundo'
+        }, function(resp) {
+            console.log('respuesta server: ', resp);
         });
 
         //escuchar informacion

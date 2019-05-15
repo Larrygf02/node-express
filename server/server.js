@@ -28,8 +28,17 @@ io.on('connection', (client) => {
     })
 
     // Escuchar el cliente
-    client.on('enviarMensaje', (mensaje) => {
+    client.on('enviarMensaje', (mensaje,callback) => {
         console.log(mensaje);
+        if (mensaje.usuario) {
+            callback({
+                resp: 'TODO SALIO BIEN!'
+            });
+        }else {
+            callback({
+                resp: 'ALGO SALIO MAL'
+            })
+        }
     })
 })
 server.listen(port, (err) => {
